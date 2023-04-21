@@ -1,5 +1,6 @@
 import {
   Button,
+  CssBaseline,
   Step,
   StepLabel,
   Stepper,
@@ -300,6 +301,7 @@ const MuiStepper = () => {
 
   return (
     <div>
+      <CssBaseline/>
       <Stepper activeStep={activeState}>
         {steps.map((step, index) => {
           const lableProps = {};
