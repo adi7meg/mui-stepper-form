@@ -300,7 +300,7 @@ const MuiStepper = () => {
   // };
 
   return (
-    <div>
+    <div style={{paddingLeft: 120, paddingRight:15}}>
       <CssBaseline/>
       <Stepper activeStep={activeState}>
         {steps.map((step, index) => {

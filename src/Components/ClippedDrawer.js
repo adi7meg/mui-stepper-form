@@ -6,31 +6,30 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { CssBaseline, Drawer, List, ListItemButton, ListItemText } from '@mui/material';
+import { CssBaseline, SwipeableDrawer, List, ListItemButton, ListItemText } from '@mui/material';
+import zIndex from '@mui/material/styles/zIndex';
 
-export default function ButtonAppBar() {
+
+const ClippedDrawer = () => {
   return (
-    <>
-    <CssBaseline/>
-    <Drawer>
+    <div >
+<CssBaseline/>
+
+    <SwipeableDrawer  variant='permanent' >
+        <Toolbar/> 
         <List>
           <ListItemButton>
-            <ListItemText> </ListItemText>
+            <ListItemText> Addresses </ListItemText>
+          </ListItemButton>
+          <ListItemButton>
+            <ListItemText> Street </ListItemText>
           </ListItemButton>
         </List>
-    </Drawer>
+    </SwipeableDrawer>
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+        <Toolbar/>
+      <AppBar position="fixed" style={{zIndex: 1201 }}>
+        <Toolbar>   
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Form
           </Typography>
@@ -38,6 +37,9 @@ export default function ButtonAppBar() {
         </Toolbar>
       </AppBar>
     </Box>
-    </>
-  );
+
+    </div>
+  )
 }
+
+export default ClippedDrawer
